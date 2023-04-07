@@ -10,8 +10,6 @@ def solution(p: float, x: np.array) -> tuple:
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
-    alpha = p 
-    p_values = x 
-    b = np.quantile(p_values, alpha) 
-    confidence_interval = [0.062, b] 
-    return confidence_interval[1], confidence_interval[0]
+    alpha = 1 - p 
+    return (x - 0.062)/(1 - alpha) + 0.062, \ 
+           (x - 0.062)/(alpha) + 0.062
